@@ -2,10 +2,8 @@
 #include <math.h>
 int main()
 {     double a , b , c , D, x1,x2;
-    int answer;
-    printf("Programma prodolzaetsya? (1/0):");
-    scanf("%d", &answer );
-    while (answer == 1){
+    int answer=1;
+    while  (answer == 1){
         
 
         printf("Vvedite a\n");
@@ -21,16 +19,17 @@ int main()
             x2 = (-b-sqrt(D))/(2*a);
             printf("x1=%lf, x2=%lf", x1,x2);
             printf("\n");
-}
+        }
         if (D<0) {
             printf("Kornei net\n");
     
-}
+        }   
         if (D == 0) {
-            printf("x1=%lf", x1, "\n");
-}
-    }
-
+            x1 = (-b + sqrt(D))/(2*a);
+            printf("x1=%0.2lf", x1, "\n");
+            printf("\n");
+        }
+        printf("Programma prodolzaetsya? (1/0):");
+        scanf("%d", &answer);
+    }//while 
     
-    return 0;
-}
