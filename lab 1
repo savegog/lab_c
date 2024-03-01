@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() 
+{
+    double matrix[3][3];
+    int i, j;
+    double main_diag = 0.0;
+    double side_diag = 0.0;
+
+    printf("Enter the elements of the 3x3 matrix:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%lf", &matrix[i][j]);
+            if (i == j) {
+                main_diag += matrix[i][j];
+                        }
+            if (i + j == 2) {
+                side_diag += matrix[i][j];
+                            }
+                                }
+                            }
+
+    printf("Sum of elements on the main diagonal: %.2lf\n", main_diag);
+    printf("Sum of elements on the side diagonal: %.2lf\n", side_diag);
+
+    int square_matrix[2][2];
+
+    printf("Enter the elements of the 2x2 matrix:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            scanf("%d", &square_matrix[i][j]);
+                                }
+                            }   
+
+    printf("\nSquare of the matrix:\n");
+    for (i = 0; i < 2; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("%d ", square_matrix[i][j] * square_matrix[i][j]);
+                                }
+        printf("\n");
+                            }
+
+    return 0;
+}
