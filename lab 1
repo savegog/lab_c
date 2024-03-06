@@ -23,7 +23,11 @@ int main()
     printf("Sum main diagonal: %.2lf\n", main_diag);
     printf("Sum side diagonal: %.2lf\n", side_diag);
 
-    int matrix_2[2][2];
+ 
+
+
+
+int matrix_2[2][2], summ[2][2], i,j;
 
     printf("Enter 2x2 matrix:\n");
     for (i = 0; i < 2; i++) {
@@ -31,13 +35,18 @@ int main()
             scanf("%d", &matrix_2[i][j]);
                                 }
                             }   
-    printf("\nSquare matrix:\n");
-    for (i = 0; i < 2; i++) {
-        for (j = 0; j < 2; j++) {
-            printf("%d ", ;
-                                }
-        printf("\n");
-                            }
 
+    summ[0][0] = matrix_2[0][0] * matrix_2[0][0] + matrix_2[0][1] * matrix_2[1][0];
+    summ[0][1] = matrix_2[0][0] * matrix_2[0][1] + matrix_2[0][1] * matrix_2[1][1];
+    summ[1][0] = matrix_2[1][0] * matrix_2[0][0] + matrix_2[1][1] * matrix_2[1][0];
+    summ[1][1] = matrix_2[1][0] * matrix_2[0][1] + matrix_2[1][1] * matrix_2[1][1];
+    printf("\nSquare matrix:\n");    
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d ", summ[i][j]);
+        }
+        printf("\n");
+    }
+    
     return 0;
 }
