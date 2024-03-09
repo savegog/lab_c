@@ -3,18 +3,19 @@
 int main() 
 {
     double matrix[3][3];
-    int i, j;
+    int i, j, n;
     double main_diag = 0.0;
     double side_diag = 0.0;
-
-    printf("Enter 3x3 matrix:\n");
-    for (i = 0; i < 3; i++) {
-        for (j = 0; j < 3; j++) {
+    printf("Enter n:\n");
+    scanf("%d", &n);
+    printf("Enter nxn matrix:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
             scanf("%lf", &matrix[i][j]);
             if (i == j) {
                 main_diag += matrix[i][j];
                         }
-            if (i + j == 2) {
+            if (i + j == n-1) {
                 side_diag += matrix[i][j];
                             }
                                 }
