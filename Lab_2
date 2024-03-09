@@ -11,6 +11,9 @@ int main() {
         if (str[i] == 'b'){
             str[i] = toupper(str[i]);
         }
+        if (str[i]=='!') {
+            str[i] = '?';
+        }
         
     }
     printf("%s", str);
