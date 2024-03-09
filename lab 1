@@ -2,10 +2,11 @@
 #include <math.h>
 int main() 
 {   
-    int n;
+    int n, x, y, l;
     int i, j;
     double main_diag = 0.0;
     double side_diag = 0.0;
+
     printf("Enter n:\n");
     scanf("%d", &n);
     double matrix[n][n];
@@ -30,30 +31,22 @@ int main()
 
     printf("Sum main diagonal: %.2lf\n", main_diag);
     printf("Sum side diagonal: %.2lf\n", side_diag);
- 
 
-
-
-int matrix_2[2][2], summ[2][2], i,j;
-
-    printf("Enter 2x2 matrix:\n");
-    for (i = 0; i < 2; i++) {
-        for (j = 0; j < 2; j++) {
-            scanf("%d", &matrix_2[i][j]);
-                                }
-                            }   
-
-    summ[0][0] = matrix_2[0][0] * matrix_2[0][0] + matrix_2[0][1] * matrix_2[1][0];
-    summ[0][1] = matrix_2[0][0] * matrix_2[0][1] + matrix_2[0][1] * matrix_2[1][1];
-    summ[1][0] = matrix_2[1][0] * matrix_2[0][0] + matrix_2[1][1] * matrix_2[1][0];
-    summ[1][1] = matrix_2[1][0] * matrix_2[0][1] + matrix_2[1][1] * matrix_2[1][1];
-    printf("\nSquare matrix:\n");    
-    for (int i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            printf("%d ", summ[i][j]);
+int k;
+double C[n][n];
+for (i=0; i<n; i++) {
+    for (j=0; j<n; j++){
+        C[i][j] = 0;
+        for (k=0; k<n; k++){
+            C[i][j] += matrix[i][k]*matrix[k][j];
+        }
+    }
+}
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%lf ", C[i][j]);
         }
         printf("\n");
     }
-    
-    return 0;
+  return 0;
 }
