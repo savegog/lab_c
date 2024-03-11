@@ -22,7 +22,7 @@ int main() {
         printf("Area: %lf\n", area);
     }
     else {
-        printf("Invalid ti\n");
+        printf("Invalid you!\n");
     }
     return 0;
 }
