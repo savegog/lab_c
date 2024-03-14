@@ -5,5 +5,18 @@ double* mo(double *m1, double *m2, int n, char op) {
     double *result = (double*)malloc(n * n * sizeof(double));
 if(operation == '+') {
         for(int i = 0; i < n * n; i++) {
-            result[i] = matrix1[i] + matrix2[i];
+            result[i*n + j] += matrix1[i*n + k] * matrix2[k*n + j];
+                }
+            }
         }
+    }
+    
+    return result;
+}
+
+int main() {
+    int n;
+    char operation;
+    
+    printf("Enter the size of matrices: ");
+    scanf("%d", &n);
