@@ -22,6 +22,13 @@ double *result =
       }
     }
   }
+return result;
 }
+int main() {
+    int n;
+    char op;
+    
+    printf("Enter size matrices: ");
+    scanf("%d", &n);
 {функция +-* матрицы + выделение памяти}
 main {ввести значения, ввести знак, вывести результат}
