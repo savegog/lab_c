@@ -4,7 +4,7 @@ int main() {
     double s1, s2, s3;
     printf("Enter the sides of the triangle\n");
     scanf("%lf %lf %lf", &s1, &s2, &s3);
-    if (istriangle){
+    if (istriangle(s1,s2,s3) == true){
         double perimeter = Perimeter(s1,s2,s3);
         double area = Area(s1,s2,s3);
         printf("Perimeter: %lf\n", perimeter);
@@ -21,6 +21,7 @@ int main() {
 
 
 #include <math.h>
+#include <stdbool.h>
 double Perimeter(double s1,double s2,double s3) {
     return s1+s2+s3;
 }
@@ -31,7 +32,12 @@ double Area(double s1,double s2,double s3) {
     return area;
     
 }
-double istriangle(s1,s2,s3){
-    s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1) 
-    return s1,s2,s3;
+bool istriangle(double s1, double s2, double s3){
+    if (s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1) {
+        return true;
+    }
+    else{
+        return false;
+    }
+    
 }
