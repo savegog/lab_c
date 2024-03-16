@@ -33,4 +33,5 @@ double Area(double s1,double s2,double s3) {
 }
 double istriangle(s1,s2,s3){
     s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1) 
+    return s1,s2,s3;
 }
