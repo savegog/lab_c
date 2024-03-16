@@ -1,3 +1,25 @@
+#include <stdio.h>
+#include "triangle.h"
+int main() {
+    double s1, s2, s3;
+    printf("Enter the sides of the triangle\n");
+    scanf("%lf %lf %lf", &s1, &s2, &s3);
+    if (istriangle){
+        double perimeter = Perimeter(s1,s2,s3);
+        double area = Area(s1,s2,s3);
+        printf("Perimeter: %lf\n", perimeter);
+        printf("Area: %lf\n", area);
+    }
+    else {
+        printf("NET TAKOGO TR");
+    }
+
+    return 0;
+}
+
+
+
+
 #include <math.h>
 double Perimeter(double s1,double s2,double s3) {
     return s1+s2+s3;
@@ -9,20 +31,6 @@ double Area(double s1,double s2,double s3) {
     return area;
     
 }
-#include <stdio.h>
-
-int main() {
-    double s1, s2, s3;
-    printf("Enter the sides of the triangle\n");
-    scanf("%lf %lf %lf", &s1, &s2, &s3);
-    if (s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1) {
-        double perimeter = Perimeter(s1,s2,s3);
-        double area = Area(s1,s2,s3);
-        printf("Perimeter: %lf\n", perimeter);
-        printf("Area: %lf\n", area);
-    }
-    else {
-        printf("Invalid you!\n");
-    }
-    return 0;
+double istriangle(s1,s2,s3){
+    s1 + s2 > s3 && s1 + s3 > s2 && s2 + s3 > s1) 
 }
