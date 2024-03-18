@@ -11,7 +11,7 @@ int main() {
         printf("Area: %lf\n", area);
     }
     else {
-        printf("NET TAKOGO TR");
+        printf("NET TAKOGO TREUGOLNIKA");
     }
 
     return 0;
