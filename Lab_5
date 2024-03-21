@@ -7,8 +7,8 @@ int main()
     printf("Enter size matrix:\n");
     scanf("%d", &n);
     
-    double* matrix1 = (double*)malloc(n*n*sizeof(double));
-    double* matrix2 = (double*)malloc(n*n*sizeof(double));
+    double *matrix1 = (double*)malloc(n*n*sizeof(double));
+    double *matrix2 = (double*)malloc(n*n*sizeof(double));
     
     printf("Enter nxn matrix1:\n");
     for (i = 0; i < n; i++) {
@@ -25,12 +25,12 @@ int main()
     }
     
     char operation;
-    printf("Enter operation (+,-,*):\n");
-    scanf("%c", &operation);
+    printf("Enter operation (+,-,*):");
+    scanf(" %c", &operation);
     
-    double* result = matrix_op(matrix1,matrix2,operation,n);
+    double *result = matrix_op(matrix1,matrix2,operation,n);
     
-    printf("Result =\n");
+    printf("Result:\n");
     for(int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             printf("%lf ", result[i*n+j]);
