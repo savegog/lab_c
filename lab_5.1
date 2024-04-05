@@ -1,0 +1,110 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "function.h"
+int main()
+{
+    int i, j, k, N;
+    double **m1, **m2, *Result;
+    char operation;
+    
+    printf("Enter operation (+,-,*):\n");
+    scanf("%c", &operation);
+    
+    printf("Enter size matrix:\n");
+    scanf("%d", &N);
+    getchar();
+    
+    m1=(double**)malloc(N*sizeof(double*));
+    for(i=0;i<N;i++){
+        m1[i]= (double*)malloc(N*sizeof(double));
+    }
+    printf("Enter NxN m1:\n");
+    for (i=0;i<N;i++){
+        for (j=0;j<N;j++){
+            scanf("%lf", &m1[i][j]);   
+        }
+    }
+    for (i=0;i<N;i++){
+        for (j=0;j<N;j++){
+            printf("%lf ", m1[i][j]);   
+        }
+        printf("\n");
+    }
+
+    m2=(double**)malloc(N*sizeof(double*));
+    for(i=0;i<N;i++){
+        m2[i]= (double*)malloc(N*sizeof(double));
+    }
+    printf("Enter NxN m2:\n");
+    for (i=0;i<N;i++){
+        for (j=0;j<N;j++){
+            scanf("%lf", &m2[i][j]);   
+        }
+    }
+    for (i=0;i<N;i++){
+        for (j=0;j<N;j++){
+            printf("%lf ", m2[i][j]);   
+        }
+        printf("\n");
+    }
+
+    printf("Result:\n");
+    
+    for (i=0;i<N;i++){
+        for (j=0;j<N;j++){
+            printf(" %lf ", result);   
+        }
+        printf("\n");
+    }    
+
+    return 0;
+}
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+double **result,**m1,**m2;
+int i,j,k;
+double *matrix_op(double **m1, double **m2,char operation, int N){
+    result=(double**)malloc(N*sizeof(double*));
+    for(int i=0;i<N;i++){
+        result[i]=(double*)malloc(N*sizeof(double));
+    }
+    if (operation == '+'){
+        for (int i=0;i<N;i++){
+            for (int j=0;j<N;j++){
+                result[i][j] = m1[i][j]+m2[i][j];
+            }    
+        }
+        return result;
+    }
+    
+    if (operation == '-'){
+        for (int i=0;i<N;i++){
+            for (int j=0;j<N;j++){
+                result[i][j] = m1[i][j] - m2[i][j];
+            }    
+        }
+        return result;
+    }
+    
+    if (operation == '*'){
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++){
+            result[i][j] = 0;
+                for (int k=0; k<N; k++){
+                    result[i][j] += m1[i][k]*m2[k][j];
+                }   
+            }
+        }
+        return result;
+    }
+}
+
