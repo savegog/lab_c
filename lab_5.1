@@ -69,42 +69,39 @@ int main()
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
-double **result,**m1,**m2;
-int i,j,k;
-double *matrix_op(double **m1, double **m2,char operation, int N){
-    result=(double**)malloc(N*sizeof(double*));
-    for(int i=0;i<N;i++){
-        result[i]=(double*)malloc(N*sizeof(double));
+
+double **matrix_op(double **m1, double **m2, char operation, int N){
+    double **result = (double**)malloc(N * sizeof(double*));
+    for(int i=0; i<N; i++){
+        result[i] = (double*)malloc(N * sizeof(double));
     }
+    
     if (operation == '+'){
-        for (int i=0;i<N;i++){
-            for (int j=0;j<N;j++){
-                result[i][j] = m1[i][j]+m2[i][j];
+        for (int i=0; i<N; i++){
+            for (int j=0; j<N; j++){
+                result[i][j] = m1[i][j] + m2[i][j];
             }    
         }
-        return result;
     }
     
     if (operation == '-'){
-        for (int i=0;i<N;i++){
-            for (int j=0;j<N;j++){
+        for (int i=0; i<N; i++){
+            for (int j=0; j<N; j++){
                 result[i][j] = m1[i][j] - m2[i][j];
             }    
         }
-        return result;
     }
     
     if (operation == '*'){
         for (int i=0; i<N; i++) {
             for (int j=0; j<N; j++){
-            result[i][j] = 0;
+                result[i][j] = 0;
                 for (int k=0; k<N; k++){
-                    result[i][j] += m1[i][k]*m2[k][j];
+                    result[i][j] += m1[i][k] * m2[k][j];
                 }   
             }
         }
-        return result;
     }
+    
+    return result;
 }
-
