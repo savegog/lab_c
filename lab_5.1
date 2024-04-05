@@ -5,26 +5,29 @@
 int main()
 {
     int i, j, k, N;
-    double **m1, **m2, **result,**Result;
+    double **m1, **m2,**Result;
     char operation;
+
     
     printf("Enter operation (+,-,*):\n");
     scanf("%c", &operation);
     
     printf("Enter size matrix:\n");
     scanf("%d", &N);
-    getchar();
+
     
     m1=(double**)malloc(N*sizeof(double*));
     for(i=0;i<N;i++){
         m1[i]= (double*)malloc(N*sizeof(double));
     }
+    
     printf("Enter NxN m1:\n");
     for (i=0;i<N;i++){
         for (j=0;j<N;j++){
             scanf("%lf", &m1[i][j]);   
         }
     }
+    
     for (i=0;i<N;i++){
         for (j=0;j<N;j++){
             printf("%lf ", m1[i][j]);   
@@ -36,12 +39,14 @@ int main()
     for(i=0;i<N;i++){
         m2[i]= (double*)malloc(N*sizeof(double));
     }
+    
     printf("Enter NxN m2:\n");
     for (i=0;i<N;i++){
         for (j=0;j<N;j++){
             scanf("%lf", &m2[i][j]);   
         }
     }
+    
     for (i=0;i<N;i++){
         for (j=0;j<N;j++){
             printf("%lf ", m2[i][j]);   
@@ -49,6 +54,7 @@ int main()
         printf("\n");
     }
 
+    
     printf("Result:\n");
     
     Result = matrix_op(m1,m2,operation,N);
@@ -58,6 +64,15 @@ int main()
         }
         printf("\n");
     }
+    
+    for(i=0;i<N;i++)
+    {free(m1[i]);}
+    free(m1);
+    
+    for(i=0;i<N;i++)
+    {free(m2[i]);}
+    free(m2);
+
 
     return 0;
 }
