@@ -16,7 +16,7 @@ int main()
     scanf("%d", &N);
 
     
-    m1=memory(N);
+    m1=memory_matrix(N);
     
     printf("Enter NxN m1:\n");
     for (i=0;i<N;i++){
@@ -27,7 +27,7 @@ int main()
     
     prnmtx(N, m1);
 
-    m2=memory(N);
+    m2=memory_matrix(N);
     
     printf("Enter NxN m2:\n");
     for (i=0;i<N;i++){
@@ -60,6 +60,7 @@ int main()
 
     return 0;
 }
+
 
 
 
@@ -106,7 +107,7 @@ double **matrix_op(double **m1, double **m2, char operation, int N){
     return result;
 }
 
-double **memory(int N){
+double **memory_matrix(int N){
     double **ptr = (double**)malloc(N*sizeof(double*));
     for(int i=0; i<N; i++){
         ptr[i] = (double*)malloc(N * sizeof(double));
@@ -122,6 +123,4 @@ void prnmtx(int size, double **matrix){
         }
         printf("\n");
     }
-}
-    return result;
 }
