@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int i,y;
+    char s[80],s1[80], s2[80], s3[80];
+    
+    FILE *f1;
+    f1 = fopen("all.txt", "r");
+    
+    FILE *f2; 
+    f2 = fopen("young.txt", "w");
+    
+    for(i=0;i<6;i++){
+        fgets(s,80,f1);
+        sscanf(s, "%s %s %s %d", s1, s2, s3, &y);
+        if (y>1980){
+            fprintf(f2,"%s", s);
+        }
+    }
+    
+    fclose(f1);
+    fclose(f2);
+    
+  return 0;
+}
