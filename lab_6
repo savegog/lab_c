@@ -11,8 +11,7 @@ int main(void)
     FILE *f2; 
     f2 = fopen("young.txt", "w");
     
-    for(i=0;i<6;i++){
-        fgets(s,80,f1);
+    while(fgets(s,80,f1)!=NULL){
         sscanf(s, "%s %s %s %d", s1, s2, s3, &y);
         if (y>1980){
             fprintf(f2,"%s", s);
