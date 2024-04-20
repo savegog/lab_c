@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct human{
+    char name[20];
+    char sname[20];
+    char lname[20];
+    int year;
+};
+int main(int argc,char *argv[]){
+    int N=0;
+    FILE *f1, *f2;
+    f1 = fopen("all.txt", "r");
+    while (fgets(f1,100,s)!= NULL)
+    {
+        N++
+    }
+    fclose(f1);
+    printf("N=%d", N);
+
+
+
+    struct human h1[N], h2[N];
+    f1 = fopen("all.txt", "r");
+    int i=0;
+    while (fscanf(f1, "%s %s %s %d",h1[i].lname, h1[i].name,h1[i].sname)){
+        printf("%s %s %s %d\n", h1[i].lname,h1[i].name,h[i].sname)
+        i++
+        h2[i]=h1[i];
+    }
+    
+    
+    struct human temp;
+    for(i=0;i<N;i++){
+        for(j=0;j<N-i-1;j++){
+            if (h2[j].year>h2[j+1].year){
+                temp = h2[j+1].year;
+                h2[j+1] = h2[j];
+                h2[j]=temp;
+            }
+        }
+    }
+    
+    
+  return 0;
+}
