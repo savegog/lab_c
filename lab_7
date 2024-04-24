@@ -2,45 +2,50 @@
 #include <stdlib.h>
 
 struct human{
-    char name[20];
-    char sname[20];
-    char lname[20];
+    char name[80];
+    char sname[80];
+    char lname[80];
     int year;
 };
 int main(int argc,char *argv[]){
-    int N=0;
+    char s[100];
+    int N=0,j,i=0;
     FILE *f1, *f2;
     f1 = fopen("all.txt", "r");
-    while (fgets(f1,100,s)!= NULL)
-    {
-        N++
+    while (fgets(s,100,f1) != NULL)
+    {   
+        N++;
     }
     fclose(f1);
-    printf("N=%d", N);
-
+    printf("N=%d\n", N);
 
 
     struct human h1[N], h2[N];
+    i = 0;
     f1 = fopen("all.txt", "r");
-    int i=0;
-    while (fscanf(f1, "%s %s %s %d",h1[i].lname, h1[i].name,h1[i].sname)){
-        printf("%s %s %s %d\n", h1[i].lname,h1[i].name,h[i].sname)
-        i++
+    while (fscanf(f1, "%s %s %s %d",h1[i].name, h1[i].sname,h1[i].lname,&h1[i].year) == 4){
+        printf("%s %s %s %d\n", h1[i].name,h1[i].sname,h1[i].lname,h1[i].year);
         h2[i]=h1[i];
+        i++;
     }
+    fclose(f1);
     
     
     struct human temp;
-    for(i=0;i<N;i++){
+    for(i=0;i<N-1;i++){
         for(j=0;j<N-i-1;j++){
             if (h2[j].year>h2[j+1].year){
-                temp = h2[j+1].year;
+                temp = h2[j+1];
                 h2[j+1] = h2[j];
                 h2[j]=temp;
             }
         }
     }
     
+    printf("Отсортированный массив по году рождения:\n");
+    for (i = 0; i < N; i++) {
+        printf("%s %s %s %d\n", h2[i].name, h2[i].sname, h2[i].lname, h2[i].year);
+    }
     
-  return 0;
+    return 0;
 }
