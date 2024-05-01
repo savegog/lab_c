@@ -20,19 +20,14 @@ int main(){
     while(c != 0){
     	if(s[0] == '-'){
 			res -= atof(c);
-			printf("%.2f %s\n", res, c);
 			c = strtok(0, cu);
-			printf("%.2f %s\n", res, c);
 	    	for(j = 1; j < 16; j++){
 				switch(si[j]){
 					case '+':
-						printf("%.2f\n", res);
 						res += atof(c);
-						printf("%.2f %s\n", res, c);
 						c = strtok(0, cu); break;
 					case '-':
 						res -= atof(c);
-						//printf("%.2f ", res);
 						c = strtok(0, cu); break;
 				}
 	    	}
@@ -42,11 +37,9 @@ int main(){
 				switch(si[j]){
 					case '+':
 						res += atof(c);
-						//printf("%.2f ", res);
 						c = strtok(0, cu); break;
 					case '-':
 						res -= atof(c);
-						//printf("%.2f ", res);
 						c = strtok(0, cu); break;
 				}
 			}
