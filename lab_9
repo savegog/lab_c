@@ -13,11 +13,8 @@ int main(){
 		for(j = 0; j < 2; j++){
 			if(s[i] == sign[j]){
 				si[i] = sign[j];
-			    
 			}
-		    
 		}
-	    
 	}
 	
     while(c != 0){
@@ -37,11 +34,8 @@ int main(){
 						res -= atof(c);
 						//printf("%.2f ", res);
 						c = strtok(0, cu); break;
-				    
 				}
-	    	    
 	    	}
-    	    
     	}
 		else{
 			for(j = 0; j < 16; j++){
@@ -54,13 +48,9 @@ int main(){
 						res -= atof(c);
 						//printf("%.2f ", res);
 						c = strtok(0, cu); break;
-				    
 				}
-			    
 			}
-		    
 		}
-        
     }
 					
 	printf("\nresult: %.2f ", res);
