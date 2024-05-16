@@ -31,3 +31,4 @@ int DayOfTheWeek(int year,int mon,int day){
 
     return 0;
 }   
+ДЕЛАТЬ КАК С 9 ЛАБОЙ ЧЕРЕЗ strtok
