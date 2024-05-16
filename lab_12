@@ -2,8 +2,8 @@
 
 int DayOfTheWeek(int year,int mon,int day){
     struct tm t;
-    t.tm_year = year;
-    t.tm_mon = mon;
+    t.tm_year = year-1900;
+    t.tm_mon = mon-1;
     t.tm_mday = day;
     mktime(&t);
     return t.tm_wday;
