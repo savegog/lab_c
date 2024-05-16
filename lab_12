@@ -12,22 +12,22 @@ int DayOfTheWeek(int year,int mon,int day){
 
 #include <stdio.h>
 #include <stdlib.h>
-int main(){
+    int main(){
 
-int year, mon, day;
-int dayofweek;
+    int year, mon, day;
+    int dayofweek;
 
-printf("Enter year:\n");
-scanf("%d", &year);
+    printf("Enter year:\n");
+    scanf("%d", &year);
 
-printf("Enter mon:\n");
-scanf("%d", &mon);
+    printf("Enter mon:\n");
+    scanf("%d", &mon);
+    
+    printf("Enter day:\n");
+    scanf("%d", &day);
+    
+    dayofweek = DayOfTheWeek(year,mon,day);
+    printf("Day of the week:%d\n", dayofweek);
 
-printf("Enter day:\n");
-scanf("%d", &day);
-
-dayofweek = DayOfTheWeek(year,mon,day);
-printf("Day of the week:%d\n", dayofweek);
-
-return 0;
-}
+    return 0;
+}   
