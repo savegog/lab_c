@@ -1,31 +1,31 @@
 #include <stdarg.h>
-#include <stdio.h>
-double calculate(char operation, int num_values, ...) {
+#include <stdiog.h>
+double calculate(char operation, int num_val, ...){
     va_list args;
     int i;
-    double sum = 0;
     double max = -__DBL_MAX__;
     double min = __DBL_MAX__;
+    double sum=0;
     
-    va_start(args, num_values);
+    va_start(args,num_val);
     
-    for (i = 0; i < num_values; i++) {
-        double value = va_arg(args, double);
+    for(i=0;i<num_val;i++){
+        double val=va_arg(args,double);
         
-        sum += value;
+        sum += val;
         
-        if (value > max) {
-            max = value;
+        if(val>max){
+            max=val;
         }
         
-        if (value < min) {
-            min = value;
+        if(val<min){
+            min=val;
         }
     }
     
     va_end(args);
     
-    switch(operation) {
+    switch(operation){
         case 's':
             return sum;
         case 'm':
@@ -33,8 +33,8 @@ double calculate(char operation, int num_values, ...) {
         case 'n':
             return min;
         case 'a':
-            return sum/num_values;
+            return sum/num_val;
         default:
-            return 0.0;
+            return 0;
     }
 }
