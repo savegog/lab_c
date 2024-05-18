@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_NUM(arr, n) ({ \
+#define max_num(arr, n) ({ \
     int max = arr[0]; \
     for (int i = 1; i < n; ++i) { \
         if (arr[i] > max) { \
