@@ -32,3 +32,42 @@ int DayOfTheWeek(int year,int mon,int day){
     return 0;
 }   
 ДЕЛАТЬ КАК С 9 ЛАБОЙ ЧЕРЕЗ strtok
+
+
+#include <time.h>
+
+int DayOfTheWeek(int year,int mon,int day){
+    struct tm t;
+    t.tm_year = year-1900;
+    t.tm_mon = mon-1;
+    t.tm_mday = day;
+    mktime(&t);
+    return t.tm_wday;
+
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+    int main(){
+        
+    char s[32], sign[2]=" .",si[16];
+    const char cu[4]=" .";
+    int i,j;
+    int year;
+    fgets(s,32,stdin);
+    char *c = strtok(s,cu);
+    
+    for(i=0;i<32;i++){
+        for(j=0;j<2;j++){
+            if(s[i]==sign[j]){
+                si[i]=sign[j];
+            }
+        }
+    }
+    while(c!=0){
+        year = atof(c);
+        printf("%d", year);
+    }
+    
+    return 0;
+}   
