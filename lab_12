@@ -31,9 +31,11 @@ int DayOfTheWeek(int year,int mon,int day){
 
     return 0;
 }   
-ДЕЛАТЬ КАК С 9 ЛАБОЙ ЧЕРЕЗ strtok
 
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 int DayOfTheWeek(int year,int mon,int day){
@@ -43,31 +45,35 @@ int DayOfTheWeek(int year,int mon,int day){
     t.tm_mday = day;
     mktime(&t);
     return t.tm_wday;
-
 }
 
-#include <stdio.h>
-#include <stdlib.h>
     int main(){
         
-    char s[32], sign[2]=" .",si[16];
-    const char cu[4]=" .";
     int i,j;
-    int year;
-    fgets(s,32,stdin);
-    char *c = strtok(s,cu);
+    int year, mon, day;
+    int dayofweek;
     
-    for(i=0;i<32;i++){
-        for(j=0;j<2;j++){
-            if(s[i]==sign[j]){
-                si[i]=sign[j];
-            }
+    
+    char s[12];
+    printf("Enter a date (format: DD MM YYYY):");
+    fgets(s, 12, stdin);
+    
+    int cnt=0;
+    for(i=0;i<12;i++){
+        if(s[i]=='.'){
+            cnt++;
         }
     }
-    while(c!=0){
-        year = atof(c);
-        printf("%d", year);
+    char *c=strtok(s," .\n");
+    if (cnt == 2 && c != NULL){
+        day=atoi(c);
+        c=strtok(0," .\n");
+        mon=atoi(c);
+        c=strtok(0," .\n");
+        year=atoi(c);
+        dayofweek = DayOfTheWeek(year,mon,day);
+        printf("%d", dayofweek);
     }
-    
+
     return 0;
-}   
+}  
