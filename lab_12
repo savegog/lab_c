@@ -47,11 +47,13 @@ int DayOfTheWeek(int year,int mon,int day){
     return t.tm_wday;
 }
 
+
     int main(){
         
     int i,j;
     int year, mon, day;
     int dayofweek;
+    int local;
     
     
     char s[12];
@@ -73,6 +75,13 @@ int DayOfTheWeek(int year,int mon,int day){
         year=atoi(c);
         dayofweek = DayOfTheWeek(year,mon,day);
         printf("%d", dayofweek);
+    }
+    if(s=="now"){
+        struct tm *local;
+        time_t t;
+        t = time(NULL);
+        local = localtime(&t);
+        printf("Local time and date: %s",asctime(local));
     }
 
     return 0;
