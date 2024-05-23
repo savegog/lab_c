@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 int DayOfTheWeek(int year,int mon,int day){
@@ -7,31 +10,55 @@ int DayOfTheWeek(int year,int mon,int day){
     t.tm_mday = day;
     mktime(&t);
     return t.tm_wday;
-
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-    int main(){
 
+    int main(){
+        
+    int i,j;
     int year, mon, day;
     int dayofweek;
-
-    printf("Enter year:\n");
-    scanf("%d", &year);
-
-    printf("Enter mon:\n");
-    scanf("%d", &mon);
+    int local;
     
-    printf("Enter day:\n");
-    scanf("%d", &day);
     
-    dayofweek = DayOfTheWeek(year,mon,day);
-    printf("Day of the week:%d\n", dayofweek);
+    char s[12];
+    printf("Enter a date:");
+    fgets(s, 12, stdin);
+    
+    int cnt=0;
+    for(i=0;i<12;i++){
+        if(s[i]=='.'){
+            cnt++;
+        }
+    }
+    char *c=strtok(s," .\n");
+    if (cnt == 2 && c != NULL){ //ДЕНЬ НЕДЕЛИ
+        day=atoi(c);
+        c=strtok(0," .\n");
+        mon=atoi(c);
+        c=strtok(0," .\n");
+        year=atoi(c);
+        dayofweek = DayOfTheWeek(year,mon,day);
+        printf("%d", dayofweek);
+    }
+    if(strcmp(s, "now\n")){ //ТЕКУЩИЕ ДАТА И ВРЕМЯ
+    struct tm *local;
+    time_t t;
+    t = time(NULL);
+    local = localtime(&t);
+    printf("local time and date: %s", asctime(local));
+    }
+    if(cnt==1){
+        //КАЛЕНДАРЬ ЗА МЕСЯЦ
+    }
+    
+    if(cnt==0){
+        //КАЛЕНДАРЬ ЗА ГОД
+    }
+
 
     return 0;
-}   
-
+}  
 
 #include <stdio.h>
 #include <stdlib.h>
