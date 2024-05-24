@@ -24,7 +24,7 @@ int main() {
     }
 
     while (c != 0) {
-        for (j = 0; j < 16; j++) {
+        for (j = 1; j < 16; j++) {
             switch (si[j]) {
                 case '+':
                     res += atof(c);
